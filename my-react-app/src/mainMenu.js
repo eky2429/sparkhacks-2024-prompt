@@ -4,7 +4,7 @@ import { useTable } from 'react-table';
 
 // Course Buttons //
 
-//Table Data //
+    // Table Data //
 const data = React.useMemo(() =>
  [
  {
@@ -25,7 +25,7 @@ const data = React.useMemo(() =>
  },
 ])
 
-// useTable Hook //
+    // useTable Hook //
 const {
     getTableProps,
     getTableBodyProps,
@@ -34,7 +34,7 @@ const {
     prepareRow,
 } = useTable({ columns, data })
 
-// Table Columns //
+    // Table Columns //
 const columns = React.useMemo(
     () => [
         {
@@ -43,8 +43,12 @@ const columns = React.useMemo(
                 { // Week 1: topic 1
                     Header: 'Lesson',
                     accessor: 'lesson',
+                    Cell: ({ cell }) => (
+                    <button value={cell.row.values.name} onClick={props.handleClick}>
+                    Button
+                    </button>)
                 },
-                { // if the section is complete, mark completion
+                { // if the section is complete, mark completion (must be able to change)
                     Header: 'Completion',
                     accessor: 'completion',
                 },
@@ -54,7 +58,7 @@ const columns = React.useMemo(
         //     Header: 'My Profile',
         //     columns: [
         //         {
-        //             Header: 'ProfilePicture',
+        //             Header: '',
         //             accessor: 'picture',
         //         },
         //         {
@@ -67,7 +71,7 @@ const columns = React.useMemo(
     []
 )
 
-function assembleTable () {
+function assembleTable () { // TODO: make look nice
     return (
         <table {...getTableProps()}>
           <thead>
@@ -95,16 +99,30 @@ function assembleTable () {
     )
 }
 
-// menu bar //
+// MY SHIP //
+// TODO: display progress/percentage complete
+// TODO: List "parts" acquired
 
 
-// courses //
-// progress
-// points/parts
-// account info
-// 
+// MY PROFILE //
+
+function assembleProfile() {
+    // TODO: Display username, profile picture
+    // TODO: Settings and other potential user abilities
+    // TODO: My quizzes: Go back and review quiz questions?
+}
+
+
 function HomePage () {
+    // menu bar (top)
+
+    // Course list + completion check (left + center)
     <div>
         <assembleTable/>
     </div>
+
+    //profile (upper right)
+
+    //ship progress (lower right)
+
 }
