@@ -1,6 +1,6 @@
 import React, {useContext, useState, useEffect} from 'react'
 import {auth, db} from '../firebase'
-import { ref, set, get} from 'firebase/database'
+import { ref, set, get, update} from 'firebase/database'
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 const Auth = getAuth();
@@ -48,7 +48,7 @@ export function AuthProvider({children}) {
 
     async function getUserLevel(uid) {
         const progressRef = ref(db, 'progress/${uid}')
-        const snapshot = await get(ProgressRef)
+        const snapshot = await get(progressRef)
         return snapshot.val()?.level || 1;
     }
 

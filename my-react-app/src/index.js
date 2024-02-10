@@ -2,16 +2,17 @@ import * as React from 'react';
 import { Router, Route, Routes } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-//import HomePage from './mainMenu2';
-import FinalPage from './FinalPage';
-//import Page2 from './Page2';
+//import FinalPage from './FinalPage';
+// import Page2 from './Page2';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import RightSideBar from './rightsideBar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App/>
+    <RightSideBar/>
   </React.StrictMode>
 );
 
