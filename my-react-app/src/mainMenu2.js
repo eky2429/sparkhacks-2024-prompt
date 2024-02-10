@@ -8,6 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
 import TableBody from '@mui/material/TableBody';
 import { Button } from 'react-bootstrap';
+import { Link } from '@mui/material';
 
 
 // Course Buttons //
@@ -16,22 +17,7 @@ const lessonNumber = 0; //CHANGE ACCORDING TO BUTTON PRESSED
 
 const columns = [
     {id: 'lesson', label: 'Lesson'},
-    {
-        field: "lessonButton",
-        renderCell: (cellValues) => {
-          return (
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={(event) => {
-                handleClick(event, cellValues);
-              }}
-            >
-              Go To Lesson
-            </Button>
-          );
-        }
-    },
+    {id: 'button', label: 'Link'},
     {id: 'completion', label: 'Completion'}
 ];
 
@@ -40,12 +26,12 @@ function createData(lesson, field, completion) {
 }
 
 const rows = [
-    createData('Lesson 1', 'button', 'Incomplete'),
-    createData('Lesson 2', 'button', 'Incomplete'),
-    createData('Lesson 3', 'button', 'Incomplete'),
-    createData('Lesson 4', 'button', 'Incomplete'),
-    createData('Lesson 5', 'button','Incomplete'),
-    createData('Lesson 6', 'button', 'Incomplete')
+    createData('Lesson 1', <a classname='test' value='Money Management' href='www.google.com'>button</a>, 'Incomplete'),
+    createData('Lesson 2', <button value='Lesson 2'/>, 'Incomplete'),
+    createData('Lesson 3', <button value='Lesson 3'/>, 'Incomplete'),
+    createData('Lesson 4', <button value='Lesson 4'/>, 'Incomplete'),                 
+    createData('Lesson 5', <button value='Lesson 5'/>,'Incomplete'),
+    createData('Lesson 6', <button value='Lesson 6'/>, 'Incomplete')
 ];
 
 function handleClick() {
@@ -104,6 +90,9 @@ export default function HomePage () {
 
     // Course list + completion check (left + center)
     return (
+        //menu header
+
+        //table
         <div>
             {assembleTable2()}
         </div>
