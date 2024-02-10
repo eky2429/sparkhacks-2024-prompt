@@ -1,6 +1,6 @@
 import React, {useContext, useState, useEffect} from 'react'
 import {auth, db} from '../firebase'
-import { ref, set, get} from 'firebase/database'
+import { ref, set, get, update} from 'firebase/database'
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 const Auth = getAuth();
@@ -42,18 +42,18 @@ export function AuthProvider({children}) {
     }
 
     async function initializeUserProgress(uid) {
-        const progressRef = ref(db, 'progress/${uid}')
+        const progressRef = ref(db, `progress/${uid}`)
         await set(progressRef, {level: 1})
     }
 
     async function getUserLevel(uid) {
-        const progressRef = ref(db, 'progress/${uid}')
-        const snapshot = await get(ProgressRef)
+        const progressRef = ref(db, `progress/${uid}`)
+        const snapshot = await get(progressRef)
         return snapshot.val()?.level || 1;
     }
 
     async function updateUserlevel(uid, newLevel) {
-        const progressRef = ref(db, 'progress/${uid}')
+        const progressRef = ref(db, `progress/${uid}`)
         await update(progressRef, {level: newLevel})
     }
 

@@ -1,6 +1,6 @@
 import React, {useRef,useState} from 'react'
 import{ useAuth } from '../contexts/AuthContxt'
-
+import {useNavigate, Link} from 'react-router-dom';
 
 export default function SignUpPage() {
   const emailRef = useRef()
@@ -9,6 +9,7 @@ export default function SignUpPage() {
   const [error,setError] = useState('')
   const [loading, setLoading] = useState(false)
 
+  const navigate = useNavigate();
   async function handleSubmit(event) {
     event.preventDefault()
 
@@ -17,6 +18,7 @@ export default function SignUpPage() {
         setLoading(true)
 
         await createUser(emailRef.current.value, passwordRef.current.value);
+        navigate('/page2')
         console.error('User created', currentUser)
 
     } catch(error) {
@@ -39,7 +41,7 @@ export default function SignUpPage() {
         <input type = "password" ref ={passwordRef} required/> <br/>
         <button disabled={loading} type="submit">{loading ? 'Creating profile...' : 'Create profile'}</button>
       </form>
-
+      <p>Already made an <Link to="/">Account</Link>?</p>
     </>
   )
 }

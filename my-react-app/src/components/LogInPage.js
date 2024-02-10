@@ -1,5 +1,6 @@
 import React, {useRef,useState} from 'react'
 import{ useAuth } from '../contexts/AuthContxt'
+import {useNavigate, Link} from 'react-router-dom'
 
 
 export default function LogInPage() {
@@ -8,6 +9,7 @@ export default function LogInPage() {
   const {loginUser, currentUser} = useAuth()
   const [error,setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const navigate = useNavigate();
 
   async function handleSubmit(event) {
     event.preventDefault()
@@ -17,7 +19,8 @@ export default function LogInPage() {
         setLoading(true)
 
         await loginUser(emailRef.current.value, passwordRef.current.value);
-        console.error('User created', currentUser)
+        navigate('/page2')
+        console.error('User Logged in', currentUser)
 
     } catch(error) {
       console.error('Error logging user', error)
@@ -38,6 +41,7 @@ export default function LogInPage() {
         <input type = "password" ref ={passwordRef} required/> <br/>
         <button disabled={loading} type="submit">{loading ? 'Logging In...' : 'Log In'}</button>
       </form>
+      <p>Need to make an <Link to="/signup">Account</Link>?</p>
 
     </>
   )
