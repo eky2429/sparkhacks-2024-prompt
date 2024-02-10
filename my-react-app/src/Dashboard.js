@@ -11,15 +11,15 @@ export default function Dashboard() {
         <div className="dropdown NAV">
             <p id="dropdown-heading">Profile</p>
             <div className="dropdown-options NAV">
-                <a href="#">Week1</a>
-                <a href="#">Week2</a>
-                <a href="#">Week3</a>
+                <a href="/topic1">Topic 1</a>
+                <a href="/topic2">Topic 2</a>
+                <a href="/topic3">Topic 3</a>
             </div>
         </div>
 
-        <p>Some text</p>
-        <p>Other text</p>
-        <p>etc.</p>
+        <p>Welcome!</p>
+        <p>Here in the right, you can access lessons!</p>
+        <p>Try to complete all of them!</p>
       </>
     );
   }
