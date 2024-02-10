@@ -1,1 +1,0 @@
-# sparkhacks-2024-prompt
