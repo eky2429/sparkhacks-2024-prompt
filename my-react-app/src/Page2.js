@@ -1,9 +1,9 @@
 import './App.css';
 export default function Page2() {
     return (
-      <div className="App">
+      <div className="NAV">
         <div class="dropdown">
-            <button>Profile</button>
+            <p>Profile</p>
             <div class="dropdown-options">
                 <a href="#">Week1</a>
                 <a href="#">Week2</a>
