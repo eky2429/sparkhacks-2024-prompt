@@ -1,6 +1,7 @@
 import './App.css';
-export default App;
+export default MainMenu;
 import { useTable } from 'react-table';
+import React, { useEffect, useState } from 'react';
 
 // Course Buttons //
 
@@ -135,6 +136,6 @@ function HomePage () {
 
     //profile (upper right)
 
-    //ship progress (lower right)
+    //ship progress (lower left; below course list)
 
 }
