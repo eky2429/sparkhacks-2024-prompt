@@ -45,6 +45,18 @@ export function AuthProvider({children}) {
         const progressRef = ref(db, 'progress/${uid}')
         await set(progressRef, {level: 1})
     }
+
+    async function getUserLevel(uid) {
+        const progressRef = ref(db, 'progress/${uid}')
+        const snapshot = await get(ProgressRef)
+        return snapshot.val()?.level || 1;
+    }
+
+    async function updateUserlevel(uid, newLevel) {
+        const progressRef = ref(db, 'progress/${uid}')
+        await update(progressRef, {level: newLevel})
+    }
+
     useEffect(() => {
         const unsub = auth.onAuthStateChanged(user => {
             setCurrentUser(user)
@@ -58,7 +70,9 @@ export function AuthProvider({children}) {
         currentUser,
         createUser,
         loginUser,
-        loading
+        loading,
+        getUserLevel,
+        updateUserlevel
     }
   return (
     <AuthContext.Provider value = {value}>
