@@ -8,20 +8,32 @@ import { useTable } from 'react-table';
 const data = React.useMemo(() =>
  [
  {
-    lesson: 'Week 1: topic 1',
+    lesson: 'Lesson 1: Money Management',
     completion: 'Incomplete', // MUST UPDATE
  },
  {
-    lesson: 'Week 2: topic 2',
+    lesson: 'Lesson 2: Budget and Expenses',
     completion: 'Incomplete', //MUST UPDATE
  },
  {
-    lesson: 'Week 3: topic 3',
+    lesson: 'Lesson 3: Retirement Planning',
     completion: 'Incomplete', // MUST UPDATE
  },
  {
-    lesson: 'Week 4: topic 4',
+    lesson: 'Lesson 4: Investments, Stocks, Bonds',
     completion: 'Incomplete', //MUST UPDATE
+ },
+ {
+    lesson: 'Lesson 5: topic 5',
+    completion: 'Incomplete', //MUST UPDATE
+ },
+ {
+  lesson: 'Lesson 6: topic 6',
+  completion: 'Incomplete', //MUST UPDATE
+ },
+ {
+  lesson: 'Lesson 7: topic 7',
+  completion: 'Incomplete', //MUST UPDATE
  },
 ])
 
