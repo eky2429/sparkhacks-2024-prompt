@@ -6,11 +6,14 @@ import Page2 from './Page2';
 import FinalPage from './FinalPage';
 import Debug from './Debug';
 import reportWebVitals from './reportWebVitals';
+import RightSideBar from './rightsideBar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Page2 />
+    <App/>
+    <RightSideBar/>
   </React.StrictMode>
 );
 
