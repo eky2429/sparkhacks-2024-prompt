@@ -1,3 +1,5 @@
+import './App.css';
+
 export const quiz1 = {
     topic: 'money management',
     level: '1',
@@ -17,8 +19,7 @@ export const quiz1 = {
         correctAnswer: 'Buy things they cannot afford.',
       },
       {
-        question:
-          'Which of the following records is NOT typically recommended to be kept safe in your home or personal computer?',
+        question: 'Which of the following records is NOT typically recommended to be kept safe in your home or personal computer?',
         choices: ['Tax records', 'Housing records', 'Shopping receipts', 'Investment records'],
         type: 'MCQs',
         correctAnswer: 'Shopping reciepts',
@@ -45,3 +46,30 @@ export const quiz4 = {}
 export const quiz5 = {}
 export const quiz6 = {}
 export const quiz7 = {}
+
+
+// QUIZ LAYOUT //
+const Quiz = () => {
+  const [activeQuestion, setActiveQuestion] = useState(0)
+  const [selectedAnswer, setSelectedAnswer] = useState('')
+
+  const onClickNext = () => {
+    setActiveQuestion((prev) => prev + 1)
+  }
+
+  const { questions } = quiz
+  const { question, choices } = questions[activeQuestion]
+
+  return (
+    <div>
+      <h1>Quiz</h1>
+      <h2>{question}</h2>
+      <ul>
+        {choices.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+      <button onClick={onClickNext}>Next</button>
+    </div>
+  )
+}
