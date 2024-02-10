@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
+export default App;
 
 function App() {
   return (
@@ -14,19 +14,3 @@ function App() {
     </div>
   );
 }
-
-function Page2() {
-  return (
-    <div className="App">
-      <form>
-        <label>Username: </label>
-        <input/> <br/>
-        <label>Password: </label>
-        <input/> <br/>
-        <button type="submit">Create profile</button>
-      </form>
-    </div>
-  );
-}
-
-export default App;
