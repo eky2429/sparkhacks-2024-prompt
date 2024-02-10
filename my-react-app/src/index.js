@@ -4,12 +4,13 @@ import './index.css';
 import App from './App';
 import Page2 from './Page2';
 import FinalPage from './FinalPage';
+import Debug from './Debug';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <FinalPage />
+    <App />
   </React.StrictMode>
 );
 

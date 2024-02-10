@@ -6,9 +6,9 @@ function App() {
     <div className="App">
       <form className="OtherStuff">
         <label>Username: </label>
-        <input/> <br/>
+        <input type = "text"/> <br/>
         <label>Password: </label>
-        <input/> <br/>
+        <input type = "password"/> <br/>
         <button type="submit">Create profile</button>
       </form>
     </div>

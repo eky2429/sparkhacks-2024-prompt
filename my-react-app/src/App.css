@@ -4,12 +4,16 @@
   padding: 50px;
 }
 
+#NavigationBar {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 p, label, a, h1 {
-  /*Bright Purple*/
-  background-color: rgb(124, 32, 224);
   /*White*/
   color: white;
   text-align: center;
+  text-shadow: 4px 4px 2px black;
 }
 
 .OtherStuff {
@@ -24,7 +28,7 @@ p, label, a, h1 {
   border-radius: 10%;
   max-width: 200px;
   max-height: 200px;
-  box-shadow: 5px 10px;
+  box-shadow: 10px 10px 5px 5px black;
   margin: auto;
 }
 
