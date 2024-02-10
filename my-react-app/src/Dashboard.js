@@ -3,7 +3,7 @@ import './App.css';
 import FinalPage from './FinalPage';
 import {Link, Route, Routes, useNavigate} from 'react-router-dom';
 
-export default function Page2() {
+export default function Dashboard() {
     const navigate = useNavigate();
     const handleClick = () => navigate('/finalpage')
     return (
@@ -20,8 +20,6 @@ export default function Page2() {
         <p>Some text</p>
         <p>Other text</p>
         <p>etc.</p>
-
-        <button type = "button" onClick={handleClick}>Go to last page</button>
       </>
     );
   }
