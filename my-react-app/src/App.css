@@ -4,7 +4,7 @@
   padding: 50px;
 }
 
-p, label, a {
+p, label, a, h1 {
   /*Bright Purple*/
   background-color: rgb(124, 32, 224);
   /*White*/
