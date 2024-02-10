@@ -1,10 +1,12 @@
 import React, {useContext, useState, useEffect} from 'react'
-import {auth} from '../firebase'
+import {auth, db} from '../firebase'
+import { ref, set, get} from 'firebase/database'
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 const Auth = getAuth();
 
 const AuthContext = React.createContext()
+
 
 export function useAuth() {
     return useContext(AuthContext);
@@ -18,8 +20,9 @@ export function AuthProvider({children}) {
     function createUser(email,password) {
         return createUserWithEmailAndPassword(Auth, email,password)
             .then((userCredential)=>{
-                setCurrentUser(userCredential);
-                return userCredential;
+                setCurrentUser(userCredential.user);
+                initializeUserProgress(userCredential.user.uid);
+                return userCredential.user;
             })
             .catch(error =>{
                     console.error('Error creating user', error);
@@ -38,7 +41,10 @@ export function AuthProvider({children}) {
                 });
     }
 
-
+    async function initializeUserProgress(uid) {
+        const progressRef = ref(db, 'progress/${uid}')
+        await set(progressRef, {level: 1})
+    }
     useEffect(() => {
         const unsub = auth.onAuthStateChanged(user => {
             setCurrentUser(user)
