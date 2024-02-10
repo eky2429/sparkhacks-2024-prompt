@@ -1,18 +1,35 @@
 .App {
+  /*Dark purple*/
+  background-color: rgb(46, 41, 61);
+  padding: 50px;
+}
+
+p, label {
+  /*Bright Purple*/
+  background-color: rgb(124, 32, 224);
+  /*White*/
+  color: white;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.OtherStuff {
+  /*Bright Purple*/
+  background-color: rgb(124, 32, 224);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10%;
+  max-width: 200px;
+  max-height: 200px;
+  box-shadow: 5px 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
+
+/*
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -36,3 +53,4 @@
     transform: rotate(360deg);
   }
 }
+*/
