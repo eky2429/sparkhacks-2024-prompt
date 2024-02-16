@@ -18,7 +18,7 @@ export default function Dashboard() {
         </div>
 
         <p>Welcome!</p>
-        <p>Here in the right, you can access lessons!</p>
+        <p>Here on the left, you can access lessons!</p>
         <p>Try to complete all of them!</p>
       </>
     );

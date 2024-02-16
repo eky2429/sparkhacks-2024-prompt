@@ -11,17 +11,17 @@ import { AuthProvider } from './contexts/AuthContxt';
 
 const App = () => (
   <AuthProvider>
-  <BrowserRouter>
-    <Routes>
-      <Route exact path='/' element = {<LogInPage/>}/>
-      <Route path='dashboard' element = {<Dashboard/>}/>
-      <Route path= 'finalpage' element = {<FinalPage/>}/>
-      <Route exact path='/' element = {<LogInPage/>}/>
-      <Route path='topic1' element = {<FirstTopic/>}/>
-      <Route path= 'topic2' element = {<SecondTopic/>}/>
-      <Route path= 'topic3' element = {<ThirdTopic/>}/>
-    </Routes>
-  </BrowserRouter>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path='/' element = {<LogInPage/>}/>
+        <Route path='dashboard' element = {<Dashboard/>}/>
+        <Route path= 'finalpage' element = {<FinalPage/>}/>
+        <Route exact path='/' element = {<LogInPage/>}/>
+        <Route path='topic1' element = {<FirstTopic/>}/>
+        <Route path= 'topic2' element = {<SecondTopic/>}/>
+        <Route path= 'topic3' element = {<ThirdTopic/>}/>
+      </Routes>
+    </BrowserRouter>
   </AuthProvider>
 );
 
